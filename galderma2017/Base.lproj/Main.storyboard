@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wXA-Ez-Mle">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="6dr-tQ-7EC">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="9QO-V4-K55" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7NH-uC-Nc2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MPP-r0-zLD">
+                        <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="5IV-AR-Zvd" kind="relationship" relationship="rootViewController" id="TuJ-kA-4X2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Og5-Vt-BhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3084" y="1381"/>
+        </scene>
+        <!--Producto2 View Controller-->
+        <scene sceneID="3Bq-V2-abp">
+            <objects>
+                <viewController id="le1-6Z-tff" customClass="Producto2ViewController" customModule="galderma2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D3j-rR-QCG"/>
+                        <viewControllerLayoutGuide type="bottom" id="6ut-3W-U08"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H9r-yk-9ZD">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dermopediatricsFondo" translatesAutoresizingMaskIntoConstraints="NO" id="4nw-0T-eoY">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dermopediatricsSlide1Fondo" translatesAutoresizingMaskIntoConstraints="NO" id="nrd-mJ-qTk">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dermopediatricsSlide1Img" translatesAutoresizingMaskIntoConstraints="NO" id="GfU-AH-6tA">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dermopediatricsSlide1Texto4" translatesAutoresizingMaskIntoConstraints="NO" id="g26-QS-61B">
+                                <rect key="frame" x="481" y="629" width="287" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dermopediatricsSlide1Texto1" translatesAutoresizingMaskIntoConstraints="NO" id="gpw-VL-bbf">
+                                <rect key="frame" x="474" y="311" width="403" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dermopediatricsSlide1Texto2" translatesAutoresizingMaskIntoConstraints="NO" id="WXW-tT-SGl">
+                                <rect key="frame" x="474" y="404" width="227" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dermopediatricsSlide1Texto3" translatesAutoresizingMaskIntoConstraints="NO" id="JTQ-CO-4ci">
+                                <rect key="frame" x="474" y="455" width="393" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeFondo" translatesAutoresizingMaskIntoConstraints="NO" id="pm4-A5-IFl">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="786"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnMenu" translatesAutoresizingMaskIntoConstraints="NO" id="Mgv-Ns-46H">
+                                <rect key="frame" x="959" y="30" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnBack" translatesAutoresizingMaskIntoConstraints="NO" id="0cO-kc-ZFu">
+                                <rect key="frame" x="30" y="703" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="esquina" translatesAutoresizingMaskIntoConstraints="NO" id="f8i-c8-Ik0">
+                                <rect key="frame" x="0.0" y="0.0" width="221" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoCetaphilDermoPediatrix" translatesAutoresizingMaskIntoConstraints="NO" id="kcp-oa-NZv">
+                                <rect key="frame" x="23" y="30" width="116" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-LJ-V8d">
+                                <rect key="frame" x="30" y="698" width="48" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="MSs-le-C1N" kind="show" animates="NO" id="o86-VZ-ckL">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsJ-Eg-uMr">
+                                <rect key="frame" x="959" y="27" width="48" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo Galderma" translatesAutoresizingMaskIntoConstraints="NO" id="af8-qa-xDn">
+                                <rect key="frame" x="824" y="729" width="180" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="L73-7M-wRY">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="b5N-SL-ITl"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnBack" destination="Xg2-LJ-V8d" id="tPJ-gF-d6d"/>
+                        <outlet property="btnMenu" destination="b5N-SL-ITl" id="sNt-QF-0Jj"/>
+                        <outlet property="btnMenuSlideRight" destination="AsJ-Eg-uMr" id="9SI-4B-8wG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twe-GD-v1S" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1888" y="2265"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dB6-fl-mlR">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="uqe-0R-QeF" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8AM-RW-Vm5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZP5-T8-XCT">
+                        <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="le1-6Z-tff" kind="relationship" relationship="rootViewController" id="q4i-Ms-98b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIX-8Y-xdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3090" y="2265"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="Qws-Mn-kB3">
+            <objects>
+                <viewController id="wXA-Ez-Mle" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iBu-fN-6SH"/>
+                        <viewControllerLayoutGuide type="bottom" id="kKk-Pq-9Su"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UVf-jQ-IqE">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="wIf-2J-EW9" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="1Y0-qP-i1W"/>
+                        <segue destination="Zvb-KH-LUI" kind="custom" identifier="sw_right" customClass="SWRevealViewControllerSegueSetController" id="oiZ-r6-dFS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQK-d2-fhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4600" y="417"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nb8-t4-IiQ">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="wIf-2J-EW9" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oDS-BW-gNO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MSs-le-C1N" kind="relationship" relationship="rootViewController" id="x3A-3M-VCv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcX-HM-bp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3090" y="425"/>
+        </scene>
+        <!--Principal View Controller-->
+        <scene sceneID="wMT-XS-gWI">
+            <objects>
+                <viewController id="MSs-le-C1N" customClass="PrincipalViewController" customModule="galderma2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="03p-2w-nAJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lkc-Qk-asj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zZP-JB-9Ob">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeFondo" translatesAutoresizingMaskIntoConstraints="NO" id="aHT-9G-T2f">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeTitulo" translatesAutoresizingMaskIntoConstraints="NO" id="hmy-nr-S9f">
+                                <rect key="frame" x="274" y="169" width="477" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DaylongIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jRL-B9-XlV">
+                                <rect key="frame" x="186" y="331" width="215" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EpiduoIconBig" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-OO-rNk">
+                                <rect key="frame" x="405" y="331" width="215" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CetaphilDermopediatricsIconBig" translatesAutoresizingMaskIntoConstraints="NO" id="4nS-O1-fgu">
+                                <rect key="frame" x="624" y="331" width="215" height="215"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEV-2z-fiT">
+                                <rect key="frame" x="413" y="325" width="198" height="197"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="jK0-lG-PKo" kind="show" animates="NO" id="Txw-0Q-wQd">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xh-jt-ClO">
+                                <rect key="frame" x="632" y="331" width="198" height="197"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="le1-6Z-tff" kind="show" animates="NO" id="7Wh-eQ-qD6">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74p-vE-9RP">
+                                <rect key="frame" x="934" y="71" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOI-Th-IKy">
+                                <rect key="frame" x="194" y="325" width="198" height="197"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="5IV-AR-Zvd" kind="show" identifier="play" animates="NO" id="2xf-EU-ZtQ">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b2C-oz-4hZ">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="DoO-sH-OSE"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnItem1" destination="IEV-2z-fiT" id="deT-VG-iPv"/>
+                        <outlet property="btnItem2" destination="zOI-Th-IKy" id="B16-7k-dhc"/>
+                        <outlet property="btnItem3" destination="3xh-jt-ClO" id="8D8-dv-GuR"/>
+                        <outlet property="btnMenu" destination="DoO-sH-OSE" id="MCa-gx-LGt"/>
+                        <outlet property="btnMenuSlideRight" destination="74p-vE-9RP" id="kEw-RL-FPt"/>
+                        <outlet property="imgBtnItem1" destination="jRL-B9-XlV" id="D65-2U-jCU"/>
+                        <outlet property="imgBtnItem2" destination="rSM-OO-rNk" id="6Uf-If-pHC"/>
+                        <outlet property="imgBtnItem3" destination="4nS-O1-fgu" id="qsb-r6-Opz"/>
+                        <outlet property="imgTitulo" destination="hmy-nr-S9f" id="Gox-xj-4Du"/>
+                        <outlet property="principal_btnMenu" destination="DoO-sH-OSE" id="Wao-x2-e9E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Mq-bv-NSZ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1888" y="456"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EwK-ba-15D">
+            <objects>
+                <viewController id="Zvb-KH-LUI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GxO-Xn-KyJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="esc-UG-P0L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MMp-JE-gt4">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BtnInicio" translatesAutoresizingMaskIntoConstraints="NO" id="kLg-Xn-mqe">
+                                <rect key="frame" x="20" y="39" width="210" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DaylongIcon" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-ju-8gf">
+                                <rect key="frame" x="49" y="185" width="152" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="EpiduoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="fJf-NX-iEA">
+                                <rect key="frame" x="49" y="353" width="152" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CetaphilDermopediatricsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Rpt-h0-0eR">
+                                <rect key="frame" x="49" y="521" width="152" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mle-FG-UL3">
+                                <rect key="frame" x="20" y="39" width="210" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="wIf-2J-EW9" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="vnf-gk-anq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm8-je-e6b">
+                                <rect key="frame" x="49" y="513" width="152" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="uqe-0R-QeF" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="OuC-AB-DEH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-J5-Q6y">
+                                <rect key="frame" x="49" y="180" width="152" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="9QO-V4-K55" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="9JM-dZ-rgN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7D-DS-Wv0">
+                                <rect key="frame" x="55" y="353" width="152" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="sLJ-Of-jGw" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="Hug-gI-r1Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDH-yx-bdN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4600" y="1387"/>
+        </scene>
+        <!--Producto3 View Controller-->
+        <scene sceneID="sfB-Td-boV">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yhn-JS-NR0" sceneMemberID="firstResponder"/>
+                <viewController id="jK0-lG-PKo" customClass="Producto3ViewController" customModule="galderma2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bw7-Vw-R4R"/>
+                        <viewControllerLayoutGuide type="bottom" id="s1E-Tu-GhT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aTu-eW-b9D">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeFondo" translatesAutoresizingMaskIntoConstraints="NO" id="Vjp-x8-iHM">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="esquina" translatesAutoresizingMaskIntoConstraints="NO" id="DSr-6J-aLi">
+                                <rect key="frame" x="0.0" y="0.0" width="221" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnMenuGris" translatesAutoresizingMaskIntoConstraints="NO" id="0vn-mT-ZJV">
+                                <rect key="frame" x="959" y="30" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoEpiduo" translatesAutoresizingMaskIntoConstraints="NO" id="mMw-1g-dZC">
+                                <rect key="frame" x="37" y="30" width="127" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnBackGris" translatesAutoresizingMaskIntoConstraints="NO" id="t1Y-3H-db1">
+                                <rect key="frame" x="30" y="703" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo Galderma" translatesAutoresizingMaskIntoConstraints="NO" id="SLy-xA-8fb">
+                                <rect key="frame" x="824" y="729" width="180" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U6-Eh-HVl">
+                                <rect key="frame" x="30" y="703" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="MSs-le-C1N" kind="show" animates="NO" id="ncQ-5Y-CmP">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlr-a1-1ul">
+                                <rect key="frame" x="961" y="27" width="46" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="h96-Ii-yA8"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="YBG-E3-uku">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="hpb-k6-uJc"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnBack" destination="2U6-Eh-HVl" id="N0S-VJ-2mD"/>
+                        <outlet property="btnMenu" destination="h96-Ii-yA8" id="jTM-5X-cQc"/>
+                        <outlet property="btnMenuSlideRight" destination="Wlr-a1-1ul" id="ahx-gf-Bh9"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1913" y="3208"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bBK-4C-0nY">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="sLJ-Of-jGw" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="IP4-w3-ts7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="oFi-46-Jov">
+                        <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="jK0-lG-PKo" kind="relationship" relationship="rootViewController" id="zV5-zm-4hw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7f-US-cHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3090" y="3208"/>
+        </scene>
+        <!--Uno View Controller-->
+        <scene sceneID="0o8-FW-XSY">
+            <objects>
+                <viewController id="QNM-hu-Phy" customClass="P1UnoViewController" customModule="galderma2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q1U-rr-f5q"/>
+                        <viewControllerLayoutGuide type="bottom" id="r7R-ZB-7eC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kh6-ld-yYx">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeFondo" translatesAutoresizingMaskIntoConstraints="NO" id="MXM-IR-2wo">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="esquina" translatesAutoresizingMaskIntoConstraints="NO" id="OTC-yl-MYa">
+                                <rect key="frame" x="0.0" y="0.0" width="221" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnMenu" translatesAutoresizingMaskIntoConstraints="NO" id="GZx-ny-Dft">
+                                <rect key="frame" x="959" y="30" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="daylongLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mvY-Gi-US6">
+                                <rect key="frame" x="23" y="30" width="128" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnBack" translatesAutoresizingMaskIntoConstraints="NO" id="HWv-rO-YVm">
+                                <rect key="frame" x="30" y="703" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo Galderma" translatesAutoresizingMaskIntoConstraints="NO" id="SdV-0a-PuK">
+                                <rect key="frame" x="824" y="729" width="180" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAn-zp-HIY">
+                                <rect key="frame" x="959" y="27" width="48" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzS-p2-Mez">
+                                <rect key="frame" x="29" y="702" width="52" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="5IV-AR-Zvd" kind="show" animates="NO" id="heu-gd-Jpk">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K0I-Q9-4A0">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="qI0-Kk-se5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnBack" destination="wzS-p2-Mez" id="XcA-gk-jMn"/>
+                        <outlet property="btnMenu" destination="qI0-Kk-se5" id="dZe-qo-ZMz"/>
+                        <outlet property="btnMenuSlideRight" destination="DAn-zp-HIY" id="vzJ-Xo-xct"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nvg-cw-0cj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1004" y="1380"/>
+        </scene>
+        <!--Producto1 View Controller-->
+        <scene sceneID="xos-Hj-vCJ">
+            <objects>
+                <viewController id="5IV-AR-Zvd" customClass="Producto1ViewController" customModule="galderma2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CPP-rq-qQK"/>
+                        <viewControllerLayoutGuide type="bottom" id="tyf-sq-xYA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q6w-yC-rMb">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeFondo" translatesAutoresizingMaskIntoConstraints="NO" id="8XB-sb-HH2">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="esquina" translatesAutoresizingMaskIntoConstraints="NO" id="Tpl-1c-EH8">
+                                <rect key="frame" x="0.0" y="0.0" width="221" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnMenu" translatesAutoresizingMaskIntoConstraints="NO" id="FEH-mv-868">
+                                <rect key="frame" x="959" y="30" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="daylongLogo" translatesAutoresizingMaskIntoConstraints="NO" id="HrV-rr-Z9x">
+                                <rect key="frame" x="23" y="30" width="128" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnBack" translatesAutoresizingMaskIntoConstraints="NO" id="p0h-Op-pf8">
+                                <rect key="frame" x="30" y="703" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo Galderma" translatesAutoresizingMaskIntoConstraints="NO" id="Ysl-an-4QV">
+                                <rect key="frame" x="824" y="729" width="180" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPC-3g-94X">
+                                <rect key="frame" x="959" y="27" width="48" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99w-6n-q8P">
+                                <rect key="frame" x="29" y="702" width="52" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="MSs-le-C1N" kind="show" animates="NO" id="egB-U0-C0P">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGv-Bf-A42">
+                                <rect key="frame" x="406" y="377" width="165" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.51470874580000003" blue="0.697392397" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="QNM-hu-Phy" kind="show" animates="NO" id="zbH-4d-cSC">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YFp-T5-Nbr">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="DmI-Te-xkJ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btn1" destination="uGv-Bf-A42" id="BNQ-Tw-5eT"/>
+                        <outlet property="btnBack" destination="99w-6n-q8P" id="baS-vK-uUU"/>
+                        <outlet property="btnMenu" destination="DmI-Te-xkJ" id="Bcr-m6-wJh"/>
+                        <outlet property="btnMenuSlideRight" destination="DPC-3g-94X" id="ad5-WZ-gCh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Po6-Hs-x4g" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1888.4765624999998" y="1386.71875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BtnInicio" width="210" height="52"/>
+        <image name="CetaphilDermopediatricsIcon" width="152" height="152"/>
+        <image name="CetaphilDermopediatricsIconBig" width="215" height="215"/>
+        <image name="DaylongIcon" width="215" height="215"/>
+        <image name="EpiduoIcon" width="152" height="152"/>
+        <image name="EpiduoIconBig" width="215" height="215"/>
+        <image name="HomeFondo" width="1024" height="768"/>
+        <image name="HomeTitulo" width="477" height="53"/>
+        <image name="Logo Galderma" width="180" height="19"/>
+        <image name="LogoCetaphilDermoPediatrix" width="116" height="75"/>
+        <image name="LogoEpiduo" width="127" height="61"/>
+        <image name="btnBack" width="48" height="48"/>
+        <image name="btnBackGris" width="48" height="48"/>
+        <image name="btnMenu" width="48" height="48"/>
+        <image name="btnMenuGris" width="48" height="48"/>
+        <image name="daylongLogo" width="128" height="31"/>
+        <image name="dermopediatricsFondo" width="16" height="16"/>
+        <image name="dermopediatricsSlide1Fondo" width="16" height="16"/>
+        <image name="dermopediatricsSlide1Img" width="16" height="16"/>
+        <image name="dermopediatricsSlide1Texto1" width="16" height="16"/>
+        <image name="dermopediatricsSlide1Texto2" width="16" height="16"/>
+        <image name="dermopediatricsSlide1Texto3" width="16" height="16"/>
+        <image name="dermopediatricsSlide1Texto4" width="16" height="16"/>
+        <image name="esquina" width="221" height="137"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7Wh-eQ-qD6"/>
+        <segue reference="egB-U0-C0P"/>
+        <segue reference="heu-gd-Jpk"/>
+        <segue reference="Txw-0Q-wQd"/>
+        <segue reference="1Y0-qP-i1W"/>
+    </inferredMetricsTieBreakers>
+</document>
