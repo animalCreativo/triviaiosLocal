@@ -7,17 +7,77 @@
 //
 
 import UIKit
+import Foundation
 
 class Producto1ViewController: UIViewController {
 
-    @IBOutlet weak var btn1: UIButton!
-   
-    @IBOutlet weak var btnBack: UIButton!
+  
     
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     
     @IBOutlet weak var btnMenuSlideRight: UIButton!
     
+    
+    @IBOutlet var nombre: UILabel!
+    
+    @IBOutlet var email: UILabel!
+    
+    func convertToDictionary(text: String) -> Any? {
+        
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? Any
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        return nil
+        
+    }
+    @IBAction func buscar(_ sender: Any) {
+        
+       
+        var request = URLRequest(url: URL(string: "http://165.227.126.154:8000/getWinnerAllCeldas")!)
+        
+        var nombre_aux = ""
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)!
+            
+            print("responseString:", responseString)
+            
+            
+            let list = self.convertToDictionary(text: responseString ) as? [AnyObject]
+                
+            print(list!)
+            nombre_aux = (list?[0]["username"] as? String)!
+             print("nombre:",nombre_aux)
+            
+            DispatchQueue.main.async {
+                self.nombre.text = nombre_aux
+            }
+            
+            
+        }
+        task.resume()
+        
+        
+        
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         btnMenuSlideRight.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)) , for: UIControlEvents.touchDown)
@@ -42,7 +102,7 @@ class Producto1ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-   
+        btnMenuSlideRight.isHidden = false
         slide()
         
     }
@@ -50,6 +110,9 @@ class Producto1ViewController: UIViewController {
     func slide(){
      
     }
+    
+   
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

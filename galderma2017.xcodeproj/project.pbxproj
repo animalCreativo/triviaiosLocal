@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EBFABBF0791EF2E2D6C05E8 /* Pods_galderma2017.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8D2E957A7F2FB3CB6BDA85 /* Pods_galderma2017.framework */; };
+		4386CFE3E64DF7E41F71B77F /* Pods_galderma2017.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D42B72961875FD04C1D1E42 /* Pods_galderma2017.framework */; };
 		562D6BAE1E47C6AA005409EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BAD1E47C6AA005409EA /* AppDelegate.swift */; };
 		562D6BB31E47C6AA005409EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 562D6BB11E47C6AA005409EA /* Main.storyboard */; };
 		562D6BB61E47C6AA005409EA /* galderma2017.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BB41E47C6AA005409EA /* galderma2017.xcdatamodeld */; };
@@ -18,11 +18,13 @@
 		562D6BDF1E47C6C6005409EA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 562D6BDE1E47C6C6005409EA /* Podfile */; };
 		562D6BE41E47C720005409EA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BE31E47C720005409EA /* SWRevealViewController.m */; };
 		562D6BE61E47D54A005409EA /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BE51E47D54A005409EA /* PrincipalViewController.swift */; };
-		562D6BEC1E47DD9E005409EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BEB1E47DD9E005409EA /* ViewController.swift */; };
 		562D6BEE1E47E541005409EA /* Producto1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BED1E47E541005409EA /* Producto1ViewController.swift */; };
-		562D6BF01E47E961005409EA /* Producto2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BEF1E47E961005409EA /* Producto2ViewController.swift */; };
-		562D6BF21E47E977005409EA /* Producto3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BF11E47E977005409EA /* Producto3ViewController.swift */; };
-		562D6BF41E47E9E2005409EA /* P1UnoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562D6BF31E47E9E2005409EA /* P1UnoViewController.swift */; };
+		563F7AA11F8C02C700C87166 /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F7AA01F8C02C700C87166 /* settingViewController.swift */; };
+		563F7AA31F8C044500C87166 /* unoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F7AA21F8C044500C87166 /* unoViewController.swift */; };
+		563F7AA51F8C045300C87166 /* dosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F7AA41F8C045300C87166 /* dosViewController.swift */; };
+		563F7AA71F8C045D00C87166 /* tresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F7AA61F8C045D00C87166 /* tresViewController.swift */; };
+		563F7AA91F8C046A00C87166 /* finalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F7AA81F8C046A00C87166 /* finalViewController.swift */; };
+		565C7A6C1F8EECDC00570747 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C7A6B1F8EECDC00570747 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +44,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		565C7A671F8EE40000570747 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2D42B72961875FD04C1D1E42 /* Pods_galderma2017.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_galderma2017.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		562D6BAA1E47C6AA005409EA /* galderma2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = galderma2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		562D6BAD1E47C6AA005409EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		562D6BB21E47C6AA005409EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,19 +72,23 @@
 		562D6BCC1E47C6AA005409EA /* galderma2017UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = galderma2017UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		562D6BD01E47C6AA005409EA /* galderma2017UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = galderma2017UITests.swift; sourceTree = "<group>"; };
 		562D6BD21E47C6AA005409EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		562D6BDE1E47C6C6005409EA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		562D6BDE1E47C6C6005409EA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		562D6BE11E47C720005409EA /* galderma2017-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "galderma2017-Bridging-Header.h"; sourceTree = "<group>"; };
 		562D6BE21E47C720005409EA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		562D6BE31E47C720005409EA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		562D6BE51E47D54A005409EA /* PrincipalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
-		562D6BEB1E47DD9E005409EA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		562D6BED1E47E541005409EA /* Producto1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Producto1ViewController.swift; sourceTree = "<group>"; };
-		562D6BEF1E47E961005409EA /* Producto2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Producto2ViewController.swift; sourceTree = "<group>"; };
-		562D6BF11E47E977005409EA /* Producto3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Producto3ViewController.swift; sourceTree = "<group>"; };
-		562D6BF31E47E9E2005409EA /* P1UnoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P1UnoViewController.swift; sourceTree = "<group>"; };
-		82DFB86999D650F381044092 /* Pods-galderma2017.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-galderma2017.debug.xcconfig"; path = "Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017.debug.xcconfig"; sourceTree = "<group>"; };
-		DE8D2E957A7F2FB3CB6BDA85 /* Pods_galderma2017.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_galderma2017.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFF7098E3337B9B092247E39 /* Pods-galderma2017.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-galderma2017.release.xcconfig"; path = "Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017.release.xcconfig"; sourceTree = "<group>"; };
+		563F7AA01F8C02C700C87166 /* settingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
+		563F7AA21F8C044500C87166 /* unoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = unoViewController.swift; sourceTree = "<group>"; };
+		563F7AA41F8C045300C87166 /* dosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dosViewController.swift; sourceTree = "<group>"; };
+		563F7AA61F8C045D00C87166 /* tresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tresViewController.swift; sourceTree = "<group>"; };
+		563F7AA81F8C046A00C87166 /* finalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = finalViewController.swift; sourceTree = "<group>"; };
+		565C7A581F8ED1C700570747 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		565C7A6B1F8EECDC00570747 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		565C7A6D1F8EEE1A00570747 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		566526DE1F8D743400750EC9 /* GRDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRDB.framework; path = "../../../Library/Developer/Xcode/DerivedData/galderma2017-exhxsyqtazhkrmeswwleefhoupgm/Build/Products/Debug-iphoneos/GRDB.swift/GRDB.framework"; sourceTree = "<group>"; };
+		AB5A58270266E45F79D50CD2 /* Pods-galderma2017.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-galderma2017.release.xcconfig"; path = "Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017.release.xcconfig"; sourceTree = "<group>"; };
+		B6D28BE51AB4210CA2CE1487 /* Pods-galderma2017.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-galderma2017.debug.xcconfig"; path = "Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EBFABBF0791EF2E2D6C05E8 /* Pods_galderma2017.framework in Frameworks */,
+				4386CFE3E64DF7E41F71B77F /* Pods_galderma2017.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +117,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042C265576EB44E7CD606BA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				565C7A6D1F8EEE1A00570747 /* libsqlite3.0.tbd */,
+				565C7A581F8ED1C700570747 /* SQLite.framework */,
+				566526DE1F8D743400750EC9 /* GRDB.framework */,
+				2D42B72961875FD04C1D1E42 /* Pods_galderma2017.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21E0520017982A31912947B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6D28BE51AB4210CA2CE1487 /* Pods-galderma2017.debug.xcconfig */,
+				AB5A58270266E45F79D50CD2 /* Pods-galderma2017.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		562D6BA11E47C6A9005409EA = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +145,8 @@
 				562D6BC41E47C6AA005409EA /* galderma2017Tests */,
 				562D6BCF1E47C6AA005409EA /* galderma2017UITests */,
 				562D6BAB1E47C6AA005409EA /* Products */,
-				DC42E42AD458AF75E658510F /* Pods */,
-				F567A85B8EED4219C18F5C7F /* Frameworks */,
+				042C265576EB44E7CD606BA3 /* Frameworks */,
+				21E0520017982A31912947B7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,14 +163,12 @@
 		562D6BAC1E47C6AA005409EA /* galderma2017 */ = {
 			isa = PBXGroup;
 			children = (
-				562D6BEA1E47D58F005409EA /* Producto3 */,
-				562D6BE91E47D586005409EA /* Producto2 */,
 				562D6BE81E47D576005409EA /* Producto1 */,
 				562D6BE71E47D560005409EA /* Home */,
 				562D6BE01E47C6FE005409EA /* SWRevealViewController */,
 				562D6BAD1E47C6AA005409EA /* AppDelegate.swift */,
+				565C7A6B1F8EECDC00570747 /* Product.swift */,
 				562D6BB11E47C6AA005409EA /* Main.storyboard */,
-				562D6BEB1E47DD9E005409EA /* ViewController.swift */,
 				562D6BB71E47C6AA005409EA /* Assets.xcassets */,
 				562D6BB91E47C6AA005409EA /* LaunchScreen.storyboard */,
 				562D6BBC1E47C6AA005409EA /* Info.plist */,
@@ -171,6 +209,10 @@
 			isa = PBXGroup;
 			children = (
 				562D6BE51E47D54A005409EA /* PrincipalViewController.swift */,
+				563F7AA21F8C044500C87166 /* unoViewController.swift */,
+				563F7AA41F8C045300C87166 /* dosViewController.swift */,
+				563F7AA61F8C045D00C87166 /* tresViewController.swift */,
+				563F7AA81F8C046A00C87166 /* finalViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -179,42 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				562D6BED1E47E541005409EA /* Producto1ViewController.swift */,
-				562D6BF31E47E9E2005409EA /* P1UnoViewController.swift */,
+				563F7AA01F8C02C700C87166 /* settingViewController.swift */,
 			);
 			name = Producto1;
-			sourceTree = "<group>";
-		};
-		562D6BE91E47D586005409EA /* Producto2 */ = {
-			isa = PBXGroup;
-			children = (
-				562D6BEF1E47E961005409EA /* Producto2ViewController.swift */,
-			);
-			name = Producto2;
-			sourceTree = "<group>";
-		};
-		562D6BEA1E47D58F005409EA /* Producto3 */ = {
-			isa = PBXGroup;
-			children = (
-				562D6BF11E47E977005409EA /* Producto3ViewController.swift */,
-			);
-			name = Producto3;
-			sourceTree = "<group>";
-		};
-		DC42E42AD458AF75E658510F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				82DFB86999D650F381044092 /* Pods-galderma2017.debug.xcconfig */,
-				FFF7098E3337B9B092247E39 /* Pods-galderma2017.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F567A85B8EED4219C18F5C7F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DE8D2E957A7F2FB3CB6BDA85 /* Pods_galderma2017.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,12 +233,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 562D6BD51E47C6AA005409EA /* Build configuration list for PBXNativeTarget "galderma2017" */;
 			buildPhases = (
-				C801FAF938FD3D0388FA9F17 /* [CP] Check Pods Manifest.lock */,
+				58F77E3E17E1A4CAA9EB454D /* [CP] Check Pods Manifest.lock */,
 				562D6BA61E47C6AA005409EA /* Sources */,
 				562D6BA71E47C6AA005409EA /* Frameworks */,
 				562D6BA81E47C6AA005409EA /* Resources */,
-				DE06B157F709E5F976A03FA2 /* [CP] Embed Pods Frameworks */,
-				6E1BE0636B2C623CEDF4A433 /* [CP] Copy Pods Resources */,
+				565C7A671F8EE40000570747 /* Embed Frameworks */,
+				5E7249AE3422B7F303816766 /* [CP] Embed Pods Frameworks */,
+				6C0419143AC6E74BAEB55C06 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,12 +293,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = RentalApps;
 				TargetAttributes = {
 					562D6BA91E47C6AA005409EA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 9YRZ67W2T5;
+						DevelopmentTeam = 2Y7A6GRU4X;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -355,7 +365,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6E1BE0636B2C623CEDF4A433 /* [CP] Copy Pods Resources */ = {
+		58F77E3E17E1A4CAA9EB454D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-galderma2017-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E7249AE3422B7F303816766 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C0419143AC6E74BAEB55C06 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,36 +416,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C801FAF938FD3D0388FA9F17 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DE06B157F709E5F976A03FA2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -407,15 +423,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				562D6BEC1E47DD9E005409EA /* ViewController.swift in Sources */,
+				563F7AA71F8C045D00C87166 /* tresViewController.swift in Sources */,
 				562D6BB61E47C6AA005409EA /* galderma2017.xcdatamodeld in Sources */,
-				562D6BF21E47E977005409EA /* Producto3ViewController.swift in Sources */,
 				562D6BEE1E47E541005409EA /* Producto1ViewController.swift in Sources */,
+				563F7AA31F8C044500C87166 /* unoViewController.swift in Sources */,
 				562D6BE61E47D54A005409EA /* PrincipalViewController.swift in Sources */,
+				563F7AA51F8C045300C87166 /* dosViewController.swift in Sources */,
 				562D6BAE1E47C6AA005409EA /* AppDelegate.swift in Sources */,
-				562D6BF41E47E9E2005409EA /* P1UnoViewController.swift in Sources */,
+				563F7AA91F8C046A00C87166 /* finalViewController.swift in Sources */,
+				563F7AA11F8C02C700C87166 /* settingViewController.swift in Sources */,
 				562D6BE41E47C720005409EA /* SWRevealViewController.m in Sources */,
-				562D6BF01E47E961005409EA /* Producto2ViewController.swift in Sources */,
+				565C7A6C1F8EECDC00570747 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,7 +497,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -487,7 +507,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -529,7 +553,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -537,7 +563,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -565,36 +595,36 @@
 		};
 		562D6BD61E47C6AA005409EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82DFB86999D650F381044092 /* Pods-galderma2017.debug.xcconfig */;
+			baseConfigurationReference = B6D28BE51AB4210CA2CE1487 /* Pods-galderma2017.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconCu;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 9YRZ67W2T5;
+				DEVELOPMENT_TEAM = 2Y7A6GRU4X;
 				INFOPLIST_FILE = galderma2017/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = concorSwiftSpring.com.RentalApps.galderma2017;
+				PRODUCT_BUNDLE_IDENTIFIER = concorSwiftSpring.com.RentalApps.trivia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "galderma2017/galderma2017-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		562D6BD71E47C6AA005409EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFF7098E3337B9B092247E39 /* Pods-galderma2017.release.xcconfig */;
+			baseConfigurationReference = AB5A58270266E45F79D50CD2 /* Pods-galderma2017.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconCu;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 9YRZ67W2T5;
+				DEVELOPMENT_TEAM = 2Y7A6GRU4X;
 				INFOPLIST_FILE = galderma2017/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = concorSwiftSpring.com.RentalApps.galderma2017;
+				PRODUCT_BUNDLE_IDENTIFIER = concorSwiftSpring.com.RentalApps.trivia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "galderma2017/galderma2017-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

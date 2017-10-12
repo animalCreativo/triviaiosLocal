@@ -7,17 +7,11 @@
 //
 
 import UIKit
+import FCAlertView
 
-class PrincipalViewController: UIViewController {
+class PrincipalViewController: UIViewController , UITextFieldDelegate{
     
-    @IBOutlet weak var btnItem1: UIButton!
-    @IBOutlet weak var btnItem2: UIButton!
-    @IBOutlet weak var btnItem3: UIButton!
-    
-    @IBOutlet weak var imgBtnItem1: UIImageView!
-    @IBOutlet weak var imgBtnItem2: UIImageView!
-    @IBOutlet weak var imgBtnItem3: UIImageView!
-    
+
     @IBOutlet weak var imgTitulo: UIImageView!
     
     @IBOutlet weak var principal_btnMenu: UIBarButtonItem!
@@ -26,6 +20,14 @@ class PrincipalViewController: UIViewController {
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     
     @IBOutlet weak var btnMenuSlideRight: UIButton!
+    
+    @IBOutlet var nombre: UITextField!
+    
+    @IBOutlet var email: UITextField!
+    
+    var cont = 0
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,53 +49,54 @@ class PrincipalViewController: UIViewController {
             self.revealViewController().frontViewShadowColor        = UIColor.black
         }
  
+         self.nombre.delegate = self;
+         self.email.delegate = self;
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        btnMenuSlideRight.isHidden = true
-        slide()
+        btnMenuSlideRight.isHidden = false
+     
   
     }
     
-    func slide(){
-        btnItem1.isHidden=true
-        btnItem2.isHidden=true
-        btnItem3.isHidden=true
+
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true);
+        return false;
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let aux = 100
+        ViewUpanimateMoving(up: true, upValue: CGFloat(aux))
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let aux = 100
+        ViewUpanimateMoving(up: false, upValue: CGFloat(aux))
         
-        imgBtnItem1.isHidden=true
-        imgBtnItem2.isHidden=true
-        imgBtnItem3.isHidden=true
-        
-        imgTitulo.alpha=0
-        
-        imgTitulo.fadeIn(withduration: 0.5)
-        
-        
-        self.imgBtnItem1.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        self.imgBtnItem2.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        self.imgBtnItem3.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        
-        
-        delay(delay: 0.1){
-            self.imgBtnItem1.isHidden=false
-            self.imgBtnItem1.animationScaleEffect(view: self.imgBtnItem1, animationTime: 0.3)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        print("touch")
+        if (nombre.text == ""){
+            nombre.text = "Nombre"
         }
-        delay(delay: 0.4){
-            self.imgBtnItem2.isHidden=false
-            self.imgBtnItem2.animationScaleEffect(view: self.imgBtnItem2, animationTime: 0.3)
-        }
-        delay(delay:0.7){
-            self.imgBtnItem3.isHidden=false
-            self.imgBtnItem3.animationScaleEffect(view: self.imgBtnItem3, animationTime: 0.3)
-        }
-        
-        delay(delay:1.0){
-            self.btnItem1.isHidden = false
-            self.btnItem2.isHidden = false
-            self.btnItem3.isHidden = false
+        if (email.text == ""){
+            email.text = "Email"
         }
     }
+    func ViewUpanimateMoving (up:Bool, upValue :CGFloat){
+        let durationMovement:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -upValue : upValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(durationMovement)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -101,14 +104,15 @@ class PrincipalViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      /*
-        if segue.identifier == "play" {
-            let nextScene =  segue.destinationViewController as! DaylongSun00ViewController
+     
+        if segue.identifier == "login" {
+            let nextScene =  segue.destination as! unoViewController
             // Pass the selected object to the new view controller.
-            nextScene.video = "play"
+            nextScene.nombre = self.nombre.text!
+            nextScene.email = self.email.text!
+            nextScene.cont = self.cont
         }
- */
-        
+
     }
     
     /*
