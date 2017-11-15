@@ -8,78 +8,128 @@
 
 import UIKit
 import Foundation
+import SQLite
+import MessageUI
 
-class Producto1ViewController: UIViewController {
+class Producto1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate {
 
   
+    @IBOutlet var tabla: UITableView!
     
     @IBOutlet weak var btnMenu: UIBarButtonItem!
     
     @IBOutlet weak var btnMenuSlideRight: UIButton!
     
+    let usersTable = Table("users")
+    let nombre_aux = Expression<String>("nombre")
+    let email_aux = Expression<String>("email")
+    let trivia_aux = Expression<String>("trivia")
+    let fecha_aux = Expression<String>("fecha")
     
-    @IBOutlet var nombre: UILabel!
+    var database: Connection!
+    let id_aux = Expression<Int>("id")
+
+    var data = ["id"]
     
-    @IBOutlet var email: UILabel!
-    
-    func convertToDictionary(text: String) -> Any? {
-        
-        if let data = text.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? Any
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        
-        return nil
-        
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (data.count)
     }
-    @IBAction func buscar(_ sender: Any) {
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         
+        
+        cell.textLabel?.text = data[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Helvetica", size: 18)
+        cell.textLabel?.textColor = UIColor.gray //
+        cell.layer.backgroundColor = UIColor.clear.cgColor
+        return cell
+    }
+    
+    @IBAction func deleteBtn(_ sender: Any) {
+        
+       deleteUser()
        
-        var request = URLRequest(url: URL(string: "http://165.227.126.154:8000/getWinnerAllCeldas")!)
+    }
+    
+    
+ 
+    @IBOutlet var mailBtn: UIButton!
+    
+    @IBAction func mailBtn(_ sender: Any) {
         
-        var nombre_aux = ""
-        request.httpMethod = "GET"
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(String(describing: error))")
-                return
-            }
+        
+        
+    
+        do {
+         
+            let filename = "trivia"
+            var strings = ""
+            let subject = "Trivia Ilko"
+            let messagebody = "Envio de trivia ilko"
+            let to = "francisco.barriosr@gmail.com"
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(String(describing: response))")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)!
-            
-            print("responseString:", responseString)
-            
-            
-            let list = self.convertToDictionary(text: responseString ) as? [AnyObject]
+            let users = try self.database.prepare(self.usersTable)
+            for user in users {
+                let aux_id = String(describing: user[self.id_aux])
+                let aux_name = String(describing: user[self.nombre_aux])
+                let aux_email = String(describing: user[self.email_aux])
+                let aux_win = String(describing: user[self.trivia_aux])
+                let aux_date = String(describing: user[self.fecha_aux])
+                strings.append(aux_id + "\t " + aux_name + "\t " + aux_email + "\t " + aux_win + "\t " + aux_date + "\n ")
                 
-            print(list!)
-            nombre_aux = (list?[0]["username"] as? String)!
-             print("nombre:",nombre_aux)
+            }
             
-            DispatchQueue.main.async {
-                self.nombre.text = nombre_aux
+         
+            
+            if(MFMailComposeViewController.canSendMail()){
+                
+                let mailComposer = MFMailComposeViewController()
+                mailComposer.mailComposeDelegate = self
+                mailComposer.setToRecipients(["\(to)"] )
+                mailComposer.setSubject("\(subject)" )
+                mailComposer.setMessageBody("\(messagebody)", isHTML: false)
+                
+                if let data = (strings as NSString).data(using: String.Encoding.utf8.rawValue){
+                    //Attach File
+                    mailComposer.addAttachmentData(data, mimeType: "text/plain", fileName: filename)
+                    self.present(mailComposer, animated: true, completion: nil)
+                }
             }
             
             
+            
+         
+        } catch {
+            print(error)
         }
-        task.resume()
+ 
         
-        
-        
+   
         
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.usersTable.create { (table) in
+            table.column(self.id_aux, primaryKey: true)
+            table.column(self.nombre_aux)
+            table.column(self.email_aux)
+            table.column(self.trivia_aux)
+            table.column(self.fecha_aux)
+        }
+        
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileUrl = documentDirectory.appendingPathComponent("users").appendingPathExtension("sqlite3")
+            let database = try Connection(fileUrl.path)
+            self.database = database
+        } catch {
+            print(error)
+        }
+        
         btnMenuSlideRight.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.rightRevealToggle(_:)) , for: UIControlEvents.touchDown)
         
         if self.revealViewController() != nil {
@@ -103,16 +153,85 @@ class Producto1ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         btnMenuSlideRight.isHidden = false
-        slide()
+        load()
+        tabla.reloadData()
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        switch result.rawValue {
+        case MFMailComposeResult.cancelled.rawValue :
+            print("Cancelled")
+            
+        case MFMailComposeResult.failed.rawValue :
+            print("Failed")
+            
+        case MFMailComposeResult.saved.rawValue :
+            print("Saved")
+            
+        case MFMailComposeResult.sent.rawValue :
+            print("Sent")
+            
+            
+            
+        default: break
+            
+            
+        }
+        
+        self.dismiss(animated: true, completion: nil)
         
     }
     
-    func slide(){
-     
+    func load(){
+        do {
+            data.removeAll()
+            let users = try self.database.prepare(self.usersTable)
+            for user in users {
+                print("userId: \(user[self.id_aux]), nombre: \(user[self.nombre_aux]), email: \(user[self.email_aux]), trivia: \(user[self.trivia_aux]), fecha: \(user[self.fecha_aux])")
+                let aux_id = String(describing: user[self.id_aux])
+                let aux_name = String(describing: user[self.nombre_aux])
+                let aux_email = String(describing: user[self.email_aux])
+                let aux_win = String(describing: user[self.trivia_aux])
+                let aux_date = String(describing: user[self.fecha_aux])
+                data.append(aux_id + "\t " + aux_name + "\t " + aux_email + "\t " + aux_win + "\t " + aux_date)
+                
+            }
+        } catch {
+            print(error)
+        }
+    }
+   
+    func deleteUser(){
+        print("DELETE TAPPED")
+        let alert = UIAlertController(title: "Borrar Usuario", message: nil, preferredStyle: .alert)
+        alert.addTextField { (tf) in tf.placeholder = "Ingresar Id"; tf.keyboardType = .decimalPad
+        }
+        
+        
+        let action = UIAlertAction(title: "Borrar", style: .default) { (_) in
+            guard let userIdString = alert.textFields?.first?.text,
+                let userId = Int(userIdString)
+                else { return }
+            print(userIdString)
+            
+            let user = self.usersTable.filter(self.id_aux == userId)
+            let deleteUser = user.delete()
+            do {
+                try self.database.run(deleteUser)
+                DispatchQueue.main.async {
+                    self.load()
+                    self.tabla.reloadData()
+                }
+            } catch {
+                print(error)
+            }
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
-   
-    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

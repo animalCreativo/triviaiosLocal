@@ -8,6 +8,7 @@
 
 import UIKit
 import FCAlertView
+import SQLite
 
 class tresViewController: UIViewController,FCAlertViewDelegate  {
     
@@ -19,6 +20,24 @@ class tresViewController: UIViewController,FCAlertViewDelegate  {
     @IBOutlet var lblItem2: UILabel!
     
     var respuesta = ""
+    let usersTable = Table("users")
+    
+    let nombre_aux = Expression<String>("nombre")
+    let email_aux = Expression<String>("email")
+    let trivia_aux = Expression<String>("trivia")
+    let fecha_aux = Expression<String>("fecha")
+    
+    var database: Connection!
+    let id_aux = Expression<Int>("id")
+    let pregunta_aux = Expression<String>("pregunta")
+    let tipo_aux = Expression<String>("tipo")
+    let aws_aux = Expression<String>("aws")
+    let alt_a_aux = Expression<String>("alt_a")
+    let alt_b_aux = Expression<String>("alt_b")
+    let alt_c_aux = Expression<String>("alt_c")
+    
+    
+    
     
     @IBAction func btn1(_ sender: Any) {
         if (respuesta == "1"){
@@ -75,7 +94,7 @@ class tresViewController: UIViewController,FCAlertViewDelegate  {
             alert.delegate = self
             alert.showAlert(inView: self,
                             withTitle: "¡Felicidades!",
-                            withSubtitle: "Has respondido correctamente la mayoría de las Preguntas.",
+                            withSubtitle: "Estás participando por premios del Arte de La Cocina. \n Pronto te enviaremos novedades a tu correo electrónico. ",
                             withCustomImage:nil,
                             withDoneButtonTitle: nil,
                             andButtons:nil)
@@ -103,64 +122,62 @@ class tresViewController: UIViewController,FCAlertViewDelegate  {
     var cont = 0
     
     func saveWin(){
-        let Url = String(format: "http://165.227.126.154:8000/users")
-        guard let serviceUrl = URL(string: Url) else { return }
-        //        let loginParams = String(format: LOGIN_PARAMETERS1, "test", "Hi World")
-        let parameterDictionary = ["username" : self.nombre, "email" : self.email, "trivia": "true"]
-        var request = URLRequest(url: serviceUrl)
-        request.httpMethod = "POST"
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-            return
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        print(formatter.string(from: date))
+       
+        let insertUser = self.usersTable.insert(self.nombre_aux <- self.nombre, self.email_aux <- self.email, self.trivia_aux <- "True",self.fecha_aux <- formatter.string(from: date) )
+        
+        do {
+            try self.database.run(insertUser)
+            print("save win")
+            listU()
+        } catch {
+            print(error)
+            print("No se grabo")
         }
-        request.httpBody = httpBody
+       
         
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                }catch {
-                    print(error)
-                }
-            }
-            }.resume()
         
-
+        
     }
     func saveLose(){
-        let Url = String(format: "http://165.227.126.154:8000/users")
-        guard let serviceUrl = URL(string: Url) else { return }
-        //        let loginParams = String(format: LOGIN_PARAMETERS1, "test", "Hi World")
-        let parameterDictionary = ["username" : self.nombre, "email" : self.email, "trivia": "false"]
-        var request = URLRequest(url: serviceUrl)
-        request.httpMethod = "POST"
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-            return
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        print(formatter.string(from: date))
+        
+        let insertUser = self.usersTable.insert(self.nombre_aux <- self.nombre, self.email_aux <- self.email, self.trivia_aux <- "False",self.fecha_aux <- formatter.string(from: date) )
+        
+        do {
+            try self.database.run(insertUser)
+            print("save lose")
+            listU()
+        } catch {
+            print(error)
+            print("No se grabo")
         }
-        request.httpBody = httpBody
         
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
+       
+    }
+    
+    func listU(){
+        print("LIST TAPPED")
+        
+        do {
+            let users = try self.database.prepare(self.usersTable)
+            for user in users {
+                print("userId: \(user[self.id_aux]), nombre: \(user[self.nombre_aux]), email: \(user[self.email_aux]), trivia: \(user[self.trivia_aux]), fecha: \(user[self.fecha_aux])")
             }
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                }catch {
-                    print(error)
-                }
-            }
-            }.resume()
-        
-        
+        } catch {
+            print(error)
+        }
     }
     func convertToDictionary(text: String) -> Any? {
         
@@ -178,6 +195,22 @@ class tresViewController: UIViewController,FCAlertViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.usersTable.create { (table) in
+            table.column(self.id_aux, primaryKey: true)
+            table.column(self.nombre_aux)
+            table.column(self.email_aux)
+            table.column(self.trivia_aux)
+            table.column(self.fecha_aux)
+        }
+        
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileUrl = documentDirectory.appendingPathComponent("users").appendingPathExtension("sqlite3")
+            let database = try Connection(fileUrl.path)
+            self.database = database
+        } catch {
+            print(error)
+        }
         // Do any additional setup after loading the view.
         
         
@@ -185,52 +218,27 @@ class tresViewController: UIViewController,FCAlertViewDelegate  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        var request = URLRequest(url: URL(string: "http://165.227.126.154:8000/q3")!)
-        
-        var pregunta = ""
-        var alt_a = "", alt_b = "";
-        var aws = ""
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(String(describing: error))")
-                return
+        do {
+            
+            for row in try self.database.prepare("SELECT * FROM question WHERE tipo = 3 ORDER BY RANDOM() LIMIT 1") {
+                print("id: \(row[0]), pregunta: \(row[1]), tipo: \(row[2]), aws: \(row[3])")
+                print("alt_a: \(row[4])")
+                print("alt_b: \(row[5])")
+                print("alt_c: \(row[6])")
+                
+                
+                self.titulo.text = row[1] as? String
+                self.lblItem1.text = row[4] as? String
+                self.lblItem2.text = row[5] as? String
+    
+                self.respuesta =  String(describing: row[3]!)
+    
+                print("aws:", respuesta)
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(String(describing: response))")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)!
-            
-           // print("responseString:", responseString)
-        
-            let list = self.convertToDictionary(text: responseString ) as? [AnyObject]
-            
-           // print(list!)
-            
-            pregunta = (list?[0]["pregunta"] as? String)!
-            aws = String((list?[0]["aws"] as? Int32)!)
-            alt_a = (list?[0]["alt_a"] as? String)!
-            alt_b =  (list?[0]["alt_b"] as? String)!
-            
-           /* print("pregunta:",pregunta)
-            print("aws:",aws)
-            print("alt_a:",alt_a)
-            print("alt_b:",alt_b)
-             */
-            DispatchQueue.main.async {
-                self.titulo.text = pregunta
-                self.lblItem1.text = alt_a
-                self.lblItem2.text = alt_b
-                self.respuesta = aws
-            }
-            
-            
+        }catch {
+            print(error)
         }
-        task.resume()
         
         print("--------Tres-----------")
         print("nombre: ", nombre)

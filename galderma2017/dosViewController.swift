@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import SQLite
 
 class dosViewController: UIViewController {
     var nombre = ""
     var email = ""
     var cont = 0
     var respuesta = ""
+    
+    var database: Connection!
+    let pregunta_aux = Expression<String>("pregunta")
+    let tipo_aux = Expression<String>("tipo")
+    let aws_aux = Expression<String>("aws")
+    let alt_a_aux = Expression<String>("alt_a")
+    let alt_b_aux = Expression<String>("alt_b")
+    let alt_c_aux = Expression<String>("alt_c")
+    
+    
     
     @IBOutlet var titulo: UILabel!
     
@@ -72,6 +83,14 @@ class dosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileUrl = documentDirectory.appendingPathComponent("users").appendingPathExtension("sqlite3")
+            let database = try Connection(fileUrl.path)
+            self.database = database
+        } catch {
+            print(error)
+        }
         // Do any additional setup after loading the view.
         
         
@@ -84,59 +103,29 @@ class dosViewController: UIViewController {
         self.lblItem2.font = self.lblItem2.font.withSize(CGFloat(valor))
         self.lblItem3.font = self.lblItem3.font.withSize(CGFloat(valor))
         
-        var request = URLRequest(url: URL(string: "http://165.227.126.154:8000/q2")!)
         
-        var pregunta = ""
-        var alt_a = "", alt_b = "" , alt_c = "";
-        var aws = ""
-        
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(String(describing: error))")
-                return
+        do {
+            
+            for row in try self.database.prepare("SELECT * FROM question WHERE tipo = 2 ORDER BY RANDOM() LIMIT 1") {
+                print("id: \(row[0]), pregunta: \(row[1]), tipo: \(row[2]), aws: \(row[3])")
+                print("alt_a: \(row[4])")
+                print("alt_b: \(row[5])")
+                print("alt_c: \(row[6])")
+                
+                
+                self.titulo.text = row[1] as? String
+                self.lblItem1.text = row[4] as? String
+                self.lblItem2.text = row[5] as? String
+                self.lblItem3.text = row[6] as? String
+         
+                self.respuesta =  String(describing: row[3]!)
+                
+                print("aws:", respuesta)
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(String(describing: response))")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)!
-            
-           // print("responseString:", responseString)
-            
-            let list = self.convertToDictionary(text: responseString ) as? [AnyObject]
-            
-           // print(list!)
-            pregunta = (list?[0]["pregunta"] as? String)!
-            aws = String((list?[0]["aws"] as? Int32)!)
-            alt_a = (list?[0]["alt_a"] as? String)!
-            alt_b =  (list?[0]["alt_b"] as? String)!
-            alt_c =  (list?[0]["alt_c"] as? String)!
-            
-            /*print("pregunta:",pregunta)
-            print("aws:",aws)
-            print("alt_a:",alt_a)
-            print("alt_b:",alt_b)
-            print("alt_c:",alt_c)
-            */
-
-            
-            DispatchQueue.main.async {
-                self.titulo.text = pregunta
-                self.lblItem1.text = alt_a
-                self.lblItem2.text = alt_b
-                self.lblItem3.text = alt_c
-                self.respuesta = aws
-            }
-            
-            
+        }catch {
+            print(error)
         }
-        task.resume()
-        
-        
         
         print("--------Dos-----------")
         print("nombre: ", nombre)

@@ -24,7 +24,6 @@
 		563F7AA51F8C045300C87166 /* dosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F7AA41F8C045300C87166 /* dosViewController.swift */; };
 		563F7AA71F8C045D00C87166 /* tresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F7AA61F8C045D00C87166 /* tresViewController.swift */; };
 		563F7AA91F8C046A00C87166 /* finalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563F7AA81F8C046A00C87166 /* finalViewController.swift */; };
-		565C7A6C1F8EECDC00570747 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C7A6B1F8EECDC00570747 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,19 +42,6 @@
 			remoteInfo = galderma2017;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		565C7A671F8EE40000570747 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2D42B72961875FD04C1D1E42 /* Pods_galderma2017.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_galderma2017.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,10 +69,11 @@
 		563F7AA41F8C045300C87166 /* dosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dosViewController.swift; sourceTree = "<group>"; };
 		563F7AA61F8C045D00C87166 /* tresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tresViewController.swift; sourceTree = "<group>"; };
 		563F7AA81F8C046A00C87166 /* finalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = finalViewController.swift; sourceTree = "<group>"; };
+		564994281F903452003641BF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		565C7A581F8ED1C700570747 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		565C7A6B1F8EECDC00570747 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		565C7A6D1F8EEE1A00570747 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		566526DE1F8D743400750EC9 /* GRDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRDB.framework; path = "../../../Library/Developer/Xcode/DerivedData/galderma2017-exhxsyqtazhkrmeswwleefhoupgm/Build/Products/Debug-iphoneos/GRDB.swift/GRDB.framework"; sourceTree = "<group>"; };
+		56E109341F903AE600AFECAF /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5A58270266E45F79D50CD2 /* Pods-galderma2017.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-galderma2017.release.xcconfig"; path = "Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017.release.xcconfig"; sourceTree = "<group>"; };
 		B6D28BE51AB4210CA2CE1487 /* Pods-galderma2017.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-galderma2017.debug.xcconfig"; path = "Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +107,8 @@
 		042C265576EB44E7CD606BA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56E109341F903AE600AFECAF /* SQLite.framework */,
+				564994281F903452003641BF /* libsqlite3.tbd */,
 				565C7A6D1F8EEE1A00570747 /* libsqlite3.0.tbd */,
 				565C7A581F8ED1C700570747 /* SQLite.framework */,
 				566526DE1F8D743400750EC9 /* GRDB.framework */,
@@ -167,7 +156,6 @@
 				562D6BE71E47D560005409EA /* Home */,
 				562D6BE01E47C6FE005409EA /* SWRevealViewController */,
 				562D6BAD1E47C6AA005409EA /* AppDelegate.swift */,
-				565C7A6B1F8EECDC00570747 /* Product.swift */,
 				562D6BB11E47C6AA005409EA /* Main.storyboard */,
 				562D6BB71E47C6AA005409EA /* Assets.xcassets */,
 				562D6BB91E47C6AA005409EA /* LaunchScreen.storyboard */,
@@ -237,7 +225,6 @@
 				562D6BA61E47C6AA005409EA /* Sources */,
 				562D6BA71E47C6AA005409EA /* Frameworks */,
 				562D6BA81E47C6AA005409EA /* Resources */,
-				565C7A671F8EE40000570747 /* Embed Frameworks */,
 				5E7249AE3422B7F303816766 /* [CP] Embed Pods Frameworks */,
 				6C0419143AC6E74BAEB55C06 /* [CP] Copy Pods Resources */,
 			);
@@ -391,10 +378,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-galderma2017/Pods-galderma2017-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FCAlertView/FCAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FCAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -433,7 +422,6 @@
 				563F7AA91F8C046A00C87166 /* finalViewController.swift in Sources */,
 				563F7AA11F8C02C700C87166 /* settingViewController.swift in Sources */,
 				562D6BE41E47C720005409EA /* SWRevealViewController.m in Sources */,
-				565C7A6C1F8EECDC00570747 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,13 +585,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6D28BE51AB4210CA2CE1487 /* Pods-galderma2017.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconCu;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2Y7A6GRU4X;
 				INFOPLIST_FILE = galderma2017/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = concorSwiftSpring.com.RentalApps.trivia;
+				PRODUCT_BUNDLE_IDENTIFIER = concorSwiftSpring.com.RentalApps.trivia2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "galderma2017/galderma2017-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -615,13 +603,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB5A58270266E45F79D50CD2 /* Pods-galderma2017.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconCu;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 2Y7A6GRU4X;
 				INFOPLIST_FILE = galderma2017/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = concorSwiftSpring.com.RentalApps.trivia;
+				PRODUCT_BUNDLE_IDENTIFIER = concorSwiftSpring.com.RentalApps.trivia2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "galderma2017/galderma2017-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

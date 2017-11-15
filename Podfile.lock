@@ -1,8 +1,12 @@
 PODS:
   - FCAlertView (1.4.1)
+  - SQLite.swift (0.11.4):
+    - SQLite.swift/standard (= 0.11.4)
+  - SQLite.swift/standard (0.11.4)
 
 DEPENDENCIES:
   - FCAlertView (from `https://github.com/nimati/FCAlertView.git`, branch `master`)
+  - SQLite.swift (~> 0.11.4)
 
 EXTERNAL SOURCES:
   FCAlertView:
@@ -16,7 +20,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   FCAlertView: d25c2f73ea9dbf7490bae29c4be6ce022f244304
+  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
 
-PODFILE CHECKSUM: ab35bba5fd1781d084b62ec10243180be7a0641b
+PODFILE CHECKSUM: 762188b3fd9c472bb9f7ef7f644a206b2578d0af
 
 COCOAPODS: 1.3.1
